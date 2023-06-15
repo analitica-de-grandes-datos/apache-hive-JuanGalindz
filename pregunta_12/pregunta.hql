@@ -32,6 +32,7 @@ LOAD DATA LOCAL INPATH 'data.tsv' INTO TABLE t0;
 /*
     >>> Escriba su respuesta a partir de este punto <<<
 */
+
 CREATE TABLE data AS
 SELECT letras, key, value
 FROM (SELECT letras, c3 FROM t0 LATERAL VIEW EXPLODE(c2) t0 AS letras) data1
